@@ -34,11 +34,18 @@ Functions
     Get the acceleration measurements in all axes at once, as a three-element
     tuple of integers ordered as X, Y, Z.
 
+.. note::
+
+    MicroPython understands the following gestures: ``"up"``, ``"down"``,
+    ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``,
+    ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``. Gestures are always
+    represented as strings.
+
 .. py:function:: current_gesture()
 
     Return the name of the current gesture.
 
-.. py:function:: is_gesture()
+.. py:function:: is_gesture(name)
 
     Return True or False to indicate if the named gesture is currently active.
 
@@ -55,8 +62,16 @@ Functions
 
     Clears the gesture history.
 
-Example
--------
+Examples
+--------
+
+A fortune telling magic 8-ball. Ask a question then shake the device for an
+answer.
+
+.. include:: ../examples/magic8.py
+    :code: python
+
+Simple Slalom. Move the device to avoid the obstacles.
 
 .. include:: ../examples/simple_slalom.py
     :code: python
